@@ -26,39 +26,9 @@
 
     <section class="containerGeneral cream_ours_color_dark">
         <div class="containerCardsContador row">
-            <div class="col s12 m6 l6">
-                <div class="card cultured_ours_color z-depth-2" style="border-radius:10px;">
-                    <div class="card-content white-text" style="padding: 5px 20px 0px 30px;">
-                        <span class="card-title black-text" style="font-weight:600;">AmigoX</span>
-                    </div>
-                    <div class="card-action" style="padding: 10px; border-radius: 10px;">
-                        <a href="a_editar_amigos_form.php" class="waves-effect waves-green btn-flat green-text text-darken-4 indigo lighten-5"><i class="material-icons left">edit</i>Editar</a>
-                        <a class="waves-effect waves-red btn-flat red-text text-darken-4 indigo lighten-5"><i class="material-icons left">close</i>Eliminar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l6">
-                <div class="card cultured_ours_color z-depth-2" style="border-radius:10px;">
-                    <div class="card-content white-text" style="padding: 5px 20px 0px 30px;">
-                        <span class="card-title black-text" style="font-weight:600;">AmigoX</span>
-                    </div>
-                    <div class="card-action" style="padding: 10px; border-radius: 10px;">
-                        <a href="a_editar_amigos_form.php" class="waves-effect waves-green btn-flat green-text text-darken-4 indigo lighten-5"><i class="material-icons left">edit</i>Editar</a>
-                        <a class="waves-effect waves-red btn-flat red-text text-darken-4 indigo lighten-5"><i class="material-icons left">close</i>Eliminar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6 l6">
-                <div class="card cultured_ours_color z-depth-2" style="border-radius:10px;">
-                    <div class="card-content white-text" style="padding: 5px 20px 0px 30px;">
-                        <span class="card-title black-text" style="font-weight:600;">AmigoX</span>
-                    </div>
-                    <div class="card-action" style="padding: 10px; border-radius: 10px;">
-                        <a href="a_editar_amigos_form.php" class="waves-effect waves-green btn-flat green-text text-darken-4 indigo lighten-5"><i class="material-icons left">edit</i>Editar</a>
-                        <a class="waves-effect waves-red btn-flat red-text text-darken-4 indigo lighten-5"><i class="material-icons left">close</i>Eliminar</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                require_once('procesos/mostrarAmigos.php');
+            ?>
         </div>
     </section>
 

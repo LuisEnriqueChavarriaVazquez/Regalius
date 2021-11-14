@@ -31,7 +31,7 @@
 
                     <br>
 
-                    <form action="procesos/log_in_proceso.php" method="GEt">    
+                    <form action="procesos/log_in_proceso.php" method="GET">    
                         <div class="input-field col s12 m12 l6">
                             <input id="nameLogIn" name="nameLogIn" type="text" class="validate">
                             <label for="nameLogIn">Nombre</label>

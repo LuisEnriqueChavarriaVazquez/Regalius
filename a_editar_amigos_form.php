@@ -8,7 +8,31 @@
     <?php include('1_css.php'); ?>
 </head>
 <body class="cream_ours_color_dark">
-    <!--Menu de página de inicio-->
+
+    <?php
+        require_once('procesos/config.php');
+        session_start();
+        $usuarioCreador = $_SESSION['name']; 
+        $correoAmigo = $_POST['correoAmigo'];
+        $correoAmigo = str_replace ( "%40" , "@" , $correoAmigo);
+        $nombreAmigo = "";
+
+        //$sql = "INSERT INTO usuarios (idUsuario, nombreUsuario, aliasUsuario, correoUsuario, passwordUsuario) VALUES (DEFAULT,'".$nombreUsuario."','".$aliasUsuario."','".$correoUsuario."','".$passwordUsuario."')";
+        $sql = "SELECT `nombreAmigo` FROM `amigos` WHERE `correoAmigo` = '$correoAmigo'";
+        $result = $conn->query($sql);
+        if (mysqli_query($conn, $sql)) {
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $nombreAmigo = $row["nombreAmigo"];
+                }
+            }
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+    ?>
+
     <!--Menu de página de inicio-->
     <nav class="cooper_ours_color_dark z-depth-3">
         <div class="nav-wrapper">
@@ -30,32 +54,29 @@
                     <span class="card-title"><strong>Editar amigos</strong></span>
 
                     <br>
+                    <form action="procesos/editarAmigos_proceso.php" method="get">
+                        <div class="input-field col s12 m12 l6">
+                            <input id="nombreAmigoEditado" name="nombreAmigoEditado" type="text" class="validate" value="<?php echo $nombreAmigo?>">
+                            <label for="nombreAmigoEditado">Nombre</label>
+                        </div>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="name" type="text" class="validate">
-                        <label for="name">Correo electrónico.</label>
-                    </div>
-
-                    <div class="input-field col s12 m12 l6">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Nombre</label>
-                    </div>
-
-                    <br>
-                    <img src="images/editarAmigos.png" width="250px">
-
+                        <div class="input-field col s12 m12 l6">
+                            <input id="correoAmigoEditado" name="correoAmigoEditado" type="email" class="validate" value="<?php echo $correoAmigo?>">
+                            <label for="correoAmigoEditado">Correo electrónico.</label>
+                        </div>
+                        
+                        <br>
+                        <img src="images/editarAmigos.png" width="250px">
+                    
+                        <div class="col s12 m12 l12 center">
+                            <input class="waves-effect waves-light black-text btn-large cream_ours_color" type="submit" value="Editar información">
+                        </div>
+                    </form>
+                
                 </div>
             </div>
         </div>
     </div>
-
-
-    <section class="containerGeneralWelcome cream_ours_color_dark row">
-            <div class="col s12 m12 l12 center">
-                <a href="gestionar_amigos_principal.php" class="waves-effect waves-light btn-large red_ours_color"><i class="material-icons left">done</i>Editar</a>
-            </div>
-    </section>
-
 
 </body>
 <?php include('1_js.php'); ?>

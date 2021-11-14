@@ -26,7 +26,7 @@ if(!empty($_GET['nameLogIn']) && !empty($_GET['passwordLogIn'])){
         //Ingresamos nuestros datos
         if($error == "normal"){   
             //$sql = "INSERT INTO usuarios (idUsuario, nombreUsuario, aliasUsuario, correoUsuario, passwordUsuario) VALUES (DEFAULT,'".$nombreUsuario."','".$aliasUsuario."','".$correoUsuario."','".$passwordUsuario."')";
-            $sql = "SELECT `nombreUsuario`, `aliasUsuario`, `correoUsuario`, `passwordUsuario` FROM `usuarios` WHERE `nombreUsuario` = '$nombreUsuario' AND `passwordUsuario` = '$passwordUsuario'";
+            $sql = "SELECT `nombreUsuario`, `alias`, `correo`, `contra` FROM `usuarios` WHERE `nombreUsuario` = '$nombreUsuario' AND `contra` = '$passwordUsuario'";
             $result = $conn->query($sql);
             if (mysqli_query($conn, $sql)) {
                 if ($result->num_rows > 0) {
@@ -34,9 +34,9 @@ if(!empty($_GET['nameLogIn']) && !empty($_GET['passwordLogIn'])){
                     while($row = $result->fetch_assoc()) {
                         session_start();
                         $_SESSION['name'] = $row["nombreUsuario"]; 
-                        $_SESSION['alias'] = $row["aliasUsuario"];
-                        $_SESSION['correo'] = $row["correoUsuario"];
-                        $_SESSION['password'] = $row["passwordUsuario"];    
+                        $_SESSION['alias'] = $row["alias"];
+                        $_SESSION['correo'] = $row["correo"];
+                        $_SESSION['password'] = $row["contra"];    
                         header('Location:../index.php');
                     }
                 } else {

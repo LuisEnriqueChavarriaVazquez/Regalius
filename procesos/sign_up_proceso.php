@@ -40,7 +40,7 @@ if(!empty($_GET['name']) && !empty($_GET['alias']) && !empty($_GET['correo'])
 
         //Ingresamos nuestros datos
         if($error == "normal"){   
-            $sql = "INSERT INTO usuarios (idUsuario, nombreUsuario, aliasUsuario, correoUsuario, passwordUsuario) VALUES (DEFAULT,'".$nombreUsuario."','".$aliasUsuario."','".$correoUsuario."','".$passwordUsuario."')";
+            $sql = "INSERT INTO usuarios (idUsuario, nombreUsuario, alias, correo, contra) VALUES (DEFAULT,'".$nombreUsuario."','".$aliasUsuario."','".$correoUsuario."','".$passwordUsuario."')";
 
             if (mysqli_query($conn, $sql)) {
                 session_start();
