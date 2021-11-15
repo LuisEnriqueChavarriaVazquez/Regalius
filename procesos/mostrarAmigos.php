@@ -38,7 +38,18 @@ if (mysqli_query($conn, $sql)) {
             ";
         }
     } else {
-        echo "0 results";
+        echo "
+        <div class='row' width='100%'>
+            <div class='col s12' 
+            style='display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column;'>
+                <h4>No hay resultados</h4>
+                <img src='images/noRes.png' width='30%'>
+            </div>
+        </div>
+        ";
     }
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

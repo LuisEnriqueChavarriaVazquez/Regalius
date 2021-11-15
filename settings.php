@@ -49,10 +49,6 @@
                             </span>
                         </div>
                         </li>
-                        <li>
-                        <div class="collapsible-header"><i class="material-icons">chat_bubble</i>Ajustes de idioma</div>
-                        <div class="collapsible-body white"><span>Próximamente... traeremos más idiomas.</span></div>
-                        </li>
                     </ul>
         
 

@@ -3,6 +3,8 @@ $(document).ready(function(){
     $('.datepicker').datepicker();
     $('select').formSelect();
     $('.collapsible').collapsible();
+    $('.materialboxed').materialbox();
+    instance.open();
 
     $('.chips-placeholder').chips({
         placeholder: 'Temática',
