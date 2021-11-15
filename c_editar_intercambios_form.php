@@ -23,6 +23,39 @@
 
     <br><br>
 
+    <!--Editar los elementos-->
+    <?php
+        require_once('procesos/config.php');
+        session_start();
+        $usuarioCreador = $_SESSION['name']; 
+        $temaGet = $_GET['tema'];
+
+        //$sql = "INSERT INTO usuarios (idUsuario, nombreUsuario, aliasUsuario, correoUsuario, passwordUsuario) VALUES (DEFAULT,'".$nombreUsuario."','".$aliasUsuario."','".$correoUsuario."','".$passwordUsuario."')";
+        $sql = "SELECT `idIntercambio`,idUsuario,`tema`,`montoMax`,`tema1`,`tema2`,`tema3`,`limRegistro`,`limIntercambio`,`comentarios`,`amigosSeleccionados` FROM `intercambios` WHERE `tema` = '$temaGet'";
+        $result = $conn->query($sql);
+        if (mysqli_query($conn, $sql)) {
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $idIntercambio = $row["idIntercambio"];
+                    $idUsuario = $row["idUsuario"];
+                    $tema = $row["tema"];
+                    $montoMax = $row["montoMax"];
+                    $tema1 = $row["tema1"];
+                    $tema2 = $row["tema2"];
+                    $tema3 = $row["tema3"];
+                    $limRegistro = $row["limRegistro"];
+                    $limIntercambio = $row["limIntercambio"];
+                    $comentarios = $row["comentarios"];
+                    $amigosSeleccionados = $row["amigosSeleccionados"];
+                }
+            }
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+    ?>
+
     <div class="row">
         <div class="col s12">
             <div class="card cultured_ours_color">
@@ -30,53 +63,50 @@
                     <span class="card-title"><strong>Editar intercambio</strong></span>
 
                     <br>
+                    
+                    <form action="procesos/c_editarIntercambios_proceso.php" method="get">
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematica" name="tematica" type="text" class="validate" value="<?php echo $tema?>">
+                            <label for="tematica">Temática uno</label>
+                        </div>
 
-                    <div class="input-field col s12">
-                        <p class="black-text">Elige a tus amigos</p>
-                        <select multiple>
-                            <option style="color:#000 !important;" value="" disabled selected></option>
-                            <option style="color:#000 !important;" value="1">Amigo 1</option>
-                            <option style="color:#000 !important;" value="2">Amigo 2</option>
-                            <option style="color:#000 !important;" value="3">Amigo 3</option>
-                        </select>
-                    </div>
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematicaUno" name="tematicaUno" type="text" class="validate" value="<?php echo $tema1?>">
+                            <label for="tematicaUno">Temática uno</label>
+                        </div>
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematicaDos" name="tematicaDos" type="text" class="validate" value="<?php echo $tema2?>">
+                            <label for="tematicaDos">Temática dos</label>
+                        </div>
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematicaTres" name="tematicaTres" type="text" class="validate" value="<?php echo $tema3?>">
+                            <label for="tematicaTres">Temática tres</label>
+                        </div>
 
-                    <div class="input-field col s12 m4 l4">
-                        <input id="tematicaUno" type="text" class="validate">
-                        <label for="tematicaUno">Temática uno</label>
-                    </div>
-                    <div class="input-field col s12 m4 l4">
-                        <input id="tematicaDos" type="text" class="validate">
-                        <label for="tematicaDos">Temática dos</label>
-                    </div>
-                    <div class="input-field col s12 m4 l4">
-                        <input id="tematicaTres" type="text" class="validate">
-                        <label for="tematicaTres">Temática tres</label>
-                    </div>
+                        <br>
 
-                    <br>
+                        <div class="input-field col s12 m12 l6">
+                            <input id="montoMax" name="montoMax" type="number" class="validate" value="<?php echo $montoMax?>">
+                            <label for="montoMax">Monto máximo</label>
+                        </div>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="montoMáximo" type="number" class="validate">
-                        <label for="montoMáximo">Monto máximo</label>
-                    </div>
+                        <div class="input-field col s12 m12 l6">
+                            <input id="limiteFecha" name="limiteFecha" type="text" class="validate datepicker" value="<?php echo $limRegistro?>">
+                            <label for="limiteFecha">Fecha límite de registro</label>
+                        </div>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="limiteFecha" type="text" class="validate datepicker">
-                        <label for="limiteFecha">Fecha límite de registro</label>
-                    </div>
+                        <div class="input-field col s12 m12 l6">
+                            <input id="intercambioFecha" name="intercambioFecha" type="text" class="validate datepicker" value="<?php echo $limIntercambio?>">
+                            <label for="intercambioFecha">Fecha de intercambio</label>
+                        </div>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="intercambioFecha" type="text" class="validate datepicker">
-                        <label for="intercambioFecha">Fecha de intercambio</label>
-                    </div>
-
-                    <div class="input-field col s12 m12 l6">
-                        <textarea id="comentarios" class="materialize-textarea" data-length="120"></textarea>
-                        <label for="comentarios">Comentarios adicionales.</label>
-                    </div>
+                        <div class="col s12 m12 l12 center">
+                            <input class="waves-effect waves-light black-text btn-large cream_ours_color" type="submit" value="Editar información">
+                        </div>
+                    </form>
 
                     <br>
+                    &nbsp; <br>
                     <div style="width: 100%;" class="center">
                         <img src="images/EditarIntercambio.png" width="250px">
                     </div>
@@ -85,13 +115,6 @@
             </div>
         </div>
     </div>
-
-
-    <section class="containerGeneralWelcome cream_ours_color_dark row">
-            <div class="col s12 m12 l12 center">
-                <a href="sign_up.php" class="waves-effect waves-light btn-large red_ours_color"><i class="material-icons left">done</i>Editar</a>
-            </div>
-    </section>
 
 
 </body>

@@ -28,53 +28,101 @@
             <div class="card cultured_ours_color">
                 <div class="card-content">
                     <span class="card-title"><strong>Agregar intercambio</strong></span>
-
+    
                     <br>
 
-                    <div class="input-field col s12">
-                        <p class="black-text">Elige a tus amigos</p>
-                        <select multiple>
-                            <option style="color:#000 !important;" value="" disabled selected></option>
-                            <option style="color:#000 !important;" value="1">Amigo 1</option>
-                            <option style="color:#000 !important;" value="2">Amigo 2</option>
-                            <option style="color:#000 !important;" value="3">Amigo 3</option>
-                        </select>
-                    </div>
+                    <form action="procesos/c_agregar_intercambio_proceso.php" method="GET">
 
-                    <div class="input-field col s12 m4 l4">
-                        <input id="tematicaUno" type="text" class="validate">
-                        <label for="tematicaUno">Temática uno</label>
-                    </div>
-                    <div class="input-field col s12 m4 l4">
-                        <input id="tematicaDos" type="text" class="validate">
-                        <label for="tematicaDos">Temática dos</label>
-                    </div>
-                    <div class="input-field col s12 m4 l4">
-                        <input id="tematicaTres" type="text" class="validate">
-                        <label for="tematicaTres">Temática tres</label>
-                    </div>
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tema" name="tema" type="text" class="validate">
+                            <label for="tema">Nombre del intercambio</label>
+                        </div>
+                        
+                        <!--Buscar a los amigos-->
+                        <?php 
+                            session_start();
+                            $usuarioCreador = $_SESSION['name'];
+                            $contador = 0;
+                            $amigosTotal = "";
+                            require_once("procesos/config.php");
 
-                    <br>
+                            $sql = "SELECT `nombreAmigo` FROM `amigos` WHERE `idUsuario` = (SELECT `idUsuario` FROM `usuarios` WHERE `nombreUsuario` = '$usuarioCreador')";
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="montoMáximo" type="number" class="validate">
-                        <label for="montoMáximo">Monto máximo</label>
-                    </div>
+                            echo "
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="limiteFecha" type="text" class="validate datepicker">
-                        <label for="limiteFecha">Fecha límite de registro</label>
-                    </div>
+                            <div class='input-field col s12'>
+                            <p class='black-text'>Elige a tus amigos</p>
+                            <select multiple name='amigosSelect[]'>
+                                <option style='color:#000 !important;' value='' disabled selected></option>
+                            
+                            ";
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="intercambioFecha" type="text" class="validate datepicker">
-                        <label for="intercambioFecha">Fecha de intercambio</label>
-                    </div>
+                            $result = $conn->query($sql);
+                            if (mysqli_query($conn, $sql)) {
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $nombreAmigo = $row["nombreAmigo"];
+                                        echo "
+                                            <option style='color:#000 !important;' value='$nombreAmigo'>$nombreAmigo</option>
+                                        ";
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                            } else {
+                                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                            }
+                            mysqli_close($conn);
 
-                    <div class="input-field col s12 m12 l6">
-                        <textarea id="comentarios" class="materialize-textarea" data-length="120"></textarea>
-                        <label for="comentarios">Comentarios adicionales.</label>
-                    </div>
+                            echo "
+                                
+                            </select>
+                            </div>
+                        
+                            ";
+
+                        ?>
+
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematicaUno" name="tematicaUno" type="text" class="validate">
+                            <label for="tematicaUno">Temática uno</label>
+                        </div>
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematicaDos" name="tematicaDos" type="text" class="validate">
+                            <label for="tematicaDos">Temática dos</label>
+                        </div>
+                        <div class="input-field col s12 m4 l4">
+                            <input id="tematicaTres" name="tematicaTres" type="text" class="validate">
+                            <label for="tematicaTres">Temática tres</label>
+                        </div>
+
+                        <br>
+
+                        <div class="input-field col s12 m12 l6">
+                            <input id="montoMaximo" name="montoMaximo" type="number" class="validate">
+                            <label for="montoMaximo">Monto máximo</label>
+                        </div>
+
+                        <div class="input-field col s12 m12 l6">
+                            <input id="limiteFecha" name="limiteFecha" type="text" class="validate datepicker">
+                            <label for="limiteFecha">Fecha límite de registro</label>
+                        </div>
+
+                        <div class="input-field col s12 m12 l6">
+                            <input id="intercambioFecha" name="intercambioFecha" type="text" class="validate datepicker">
+                            <label for="intercambioFecha">Fecha de intercambio</label>
+                        </div>
+
+                        <div class="input-field col s12 m12 l6">
+                            <textarea id="comentarios" name="comentarios" class="materialize-textarea" data-length="120"></textarea>
+                            <label for="comentarios">Comentarios adicionales.</label>
+                        </div>
+
+                        <div class="col s12 m12 l12 center">
+                            <input name="agregar" class="waves-effect waves-light white-text btn-large cream_ours_color" type="submit" value="Agregar">
+                        </div>
+                    </fom>
 
                     <br>
                     <div style="width: 100%;" class="center">
@@ -85,13 +133,6 @@
             </div>
         </div>
     </div>
-
-
-    <section class="containerGeneralWelcome cream_ours_color_dark row">
-            <div class="col s12 m12 l12 center">
-                <a href="sign_up.php" class="waves-effect waves-light btn-large red_ours_color"><i class="material-icons left">done</i>Agregar</a>
-            </div>
-    </section>
 
 
 </body>

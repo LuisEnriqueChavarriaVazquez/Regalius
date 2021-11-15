@@ -26,42 +26,7 @@
 
     <section class="containerGeneral cream_ours_color_dark">
         <div class="containerCardsContador row">
-            <div class="col s12 m12 l6 cardPadreContainer">
-                <a href="b_opciones_intercambios.php" class="linkBlack">
-                    <div class="cardContador cultured_ours_color z-depth-2 waves-effect">
-                        <div class="cardContadorTitle flow-text">
-                            Invitación ejemplo.
-                        </div>
-                        <div class="cardContadorImage">
-                            <span class="new badge badgeDiseno" data-badge-caption="personas">4</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m12 l6 cardPadreContainer">
-                <a href="b_opciones_intercambios.php" class="linkBlack">
-                    <div class="cardContador cultured_ours_color z-depth-2 waves-effect">
-                        <div class="cardContadorTitle flow-text">
-                            Invitación ejemplo.
-                        </div>
-                        <div class="cardContadorImage">
-                            <span class="new badge badgeDiseno" data-badge-caption="personas">4</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m12 l6 cardPadreContainer">
-                <a href="b_opciones_intercambios.php" class="linkBlack">
-                    <div class="cardContador cultured_ours_color z-depth-2 waves-effect">
-                        <div class="cardContadorTitle flow-text">
-                            Invitación ejemplo.
-                        </div>
-                        <div class="cardContadorImage">
-                            <span class="new badge badgeDiseno" data-badge-caption="personas">4</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php require_once('procesos/mostrarIntercambiosCurso.php'); ?>
         </div>
     </section>
 
