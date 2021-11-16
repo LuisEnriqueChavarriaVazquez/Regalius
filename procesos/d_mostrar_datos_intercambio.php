@@ -48,8 +48,9 @@ if (mysqli_query($conn, $sql)) {
                     <div class='cardInfoElement'>
                         <h4>Comentarios</h4>
                         <p class='comentario'>"; echo $comentario; echo "</p>
-                    </div>
-                </div>
+                    </div>";
+                    require('contador_aceptados.php');
+            echo "</div>
                 <div class='infoHugeCard'>
                     <div class='cardInfoElement'>
                         <h4>Participantes</h4>
@@ -66,8 +67,8 @@ if (mysqli_query($conn, $sql)) {
             <section class='container_cards hide-on-med-and-up'>
             <div class='title_all'>
                 <p class='black-text'>"; echo $temaTitulo; echo "</p>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
-            <br><br><br><br><br><br><br><br><br>
                 <div class='container_cards_secondary'>
                     <div class='owl-carousel owl-theme' id='owl-carousel-datos'>
                         <!--Card dos-->
@@ -91,8 +92,9 @@ if (mysqli_query($conn, $sql)) {
                                 <div class='cardInfoElement'>
                                     <h4>Comentarios</h4>
                                     <p class='comentario'>"; echo $comentario; echo "</p>
-                                </div>
-                            </div>
+                                </div>";
+                                require('contador_aceptados.php');
+            echo"                </div>
                         </div>
 
                         <!--Card dos-->
@@ -110,6 +112,7 @@ if (mysqli_query($conn, $sql)) {
                     </div>
                 </div>
             </section>
+            <br><br><br><br><br><br>
             ";
 
         }

@@ -25,7 +25,6 @@
     <div class="hide-on-med-and-up">
         <br><br><br><br><br><br><br><br>
     </div>
-    <br>
     <section class="buttonsContainer">
         <div>
             <a href="d_confirmar.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">done</i>Aceptar</a>
@@ -34,7 +33,7 @@
             <a href="procesos/rechazar_proceso.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">close</i>Rechazar</a>
         </div>
     </section>
-    <div class="hide-on-med-and-up">
+    <div class="">
         <br><br><br>
     </div>
 

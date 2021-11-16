@@ -13,7 +13,7 @@
     <nav class="cooper_ours_color_dark z-depth-3">
         <div class="nav-wrapper">
         <a href="#" class="brand-logo hide-on-small-only">&nbsp;&nbsp;&nbsp;Confirmar.</a>
-        <a href="d_datos_recibidas.php" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
+        <a href="gestionar_invitaciones_recibidas_principal.php" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
         <p class="titleMobile flow-text hide-on-med-and-up">Confirmar.</p>
         <ul class="right hide-on-med-and-down">
             <li><a href="d_datos_recibidas.php">Volver al inicio</a></li>

@@ -34,7 +34,8 @@ if (mysqli_query($conn, $sql)) {
                 echo "
                             </div>
                             <div class='cardContadorImage'>
-                                <span class='new badge badgeDiseno' data-badge-caption='invitado'>"; 
+                                <span class='new badge badgeDiseno' data-badge-caption='invitados'>"; 
+                echo substr_count($amigosSeleccionados, '/'); 
                 echo               "</span>
                             </div>
                         </div>

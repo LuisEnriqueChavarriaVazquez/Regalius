@@ -33,67 +33,68 @@
                     
                     <ul class="collapsible">
                         <li>
-                        <div class="collapsible-header"><i class="material-icons">people</i>Gestión de amigos</div>
-                        <div class="collapsible-body white" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                            <span class="flow-text">Lo primero que tenemos que hacer es acceder a las opciones de nuestro menú.</span>
-                            <br>
-                            <img src="images/one_1.png" width="40%">
-                            <br>
-                            <span class="flow-text">En caso de que no tengamos elementos creados en nuestro listado lo podemos hacer.</span>
-                            <br>
-                            <img src="images/one_2.png" width="40%">
-                            <br>
-                            <span class="flow-text">Accedemos a el formulario de creación de los amigos dentro de la base de datos.</span>
-                            <br>
-                            <img src="images/one_3.png" width="40%">
-                            <br>
-                            <span class="flow-text">Ahora podemos acceder a los elementos de eliminación y a los de edición de los elementos que nosotros hemos creado.</span>
-                            <br>
-                            <img src="images/one_4.png" width="40%">
-                        </div>
+                            <div class="collapsible-header"><i class="material-icons">people</i>Gestión de amigos</div>
+                            <div class="collapsible-body white left-align">
+                                <span class="flow-text">Lo primero que tenemos que hacer es acceder a las opciones de nuestro menú.</span>
+                                <br>
+                                <img class="materialboxed" width="20%" src="images/one_1.png">
+                                <br>
+                                <span class="flow-text">En caso de que no tengamos elementos creados en nuestro listado lo podemos hacer.</span>
+                                <br>
+                                <img src="images/one_2.png" class="materialboxed" width="20%">
+                                <br>
+                                <span class="flow-text">Accedemos a el formulario de creación de los amigos dentro de la base de datos.</span>
+                                <br>
+                                <img src="images/one_3.png" class="materialboxed" width="20%">
+                                <br>
+                                <span class="flow-text">Ahora podemos acceder a los elementos de eliminación y a los de edición de los elementos que nosotros hemos creado.</span>
+                                <br>
+                                <img src="images/one_4.png" class="materialboxed" width="20%">
+                            </div>
                         </li>
                         <li>
                         <div class="collapsible-header"><i class="material-icons">card_giftcard</i>Gestión de intercambios</div>
-                        <div class="collapsible-body white">
+                        <div class="collapsible-body white left-align">
                             <span class="flow-text">Si no tenemos elementos creados en el listado debemos generarlos en nuestros formularios.</span>
                             <br>
-                            <img src="images/two_1.png" width="40%">
+                            <img src="images/two_1.png" class="materialboxed" width="20%">
                             <br>
                             <span class="flow-text">Ingresamos los datos necesarios para generar cada uno de los intercambios.</span>
                             <br>
-                            <img src="images/two_2.png" width="40%">
+                            <img src="images/two_2.png" class="materialboxed" width="20%">
                             <br>
                             <span class="flow-text">Podemos ver los elementos enlistados, acceder a cada uno de ellos, editarlos o hasta si nosotros lo deseamos eliminar los elementos.</span>
                             <br>
-                            <img src="images/two_3.png" width="40%">
+                            <img src="images/two_3.png" class="materialboxed" width="20%">
                         </div>
                         </li>
+                        
                         <li>
                         <div class="collapsible-header"><i class="material-icons">favorite</i>Intercambios en curso</div>
-                        <div class="collapsible-body white">
+                        <div class="collapsible-body white left-align">
                             <span class="flow-text">Es posible ver los intercambios que nosotros ya tenemos en curso.</span>
                             <br>
-                            <img src="images/tree_1.png" width="40%">
+                            <img src="images/tree_1.png" class="materialboxed" width="20%">
                             <br>
                             <span class="flow-text">Si pulsamos, podemos ver los datos que hemos ingresado.</span>
                             <br>
-                            <img src="images/tree_2.png" width="40%">
+                            <img src="images/tree_2.png" class="materialboxed" width="20%">
                             <br>
                             <span class="flow-text">Tambien podemos ver quienes han sido invitados.</span>
                             <br>
-                            <img src="images/tree_3.png" width="40%">
+                            <img src="images/tree_3.png" class="materialboxed" width="20%">
                         </div>
                         </li>
                         <li>
                         <div class="collapsible-header"><i class="material-icons">sentiment_very_satisfied</i>Invitaciones recibidas</div>
-                        <div class="collapsible-body white">
+                        <div class="collapsible-body white left-align">
                             <span class="flow-text">Podemos acceder a los intercambios a los que hemos sido invitados y de manera posterior podemos aceptar y describir que regalos enviaremos.</span>
                             <br>
-                            <img src="images/four_1.png" width="40%">
+                            <img src="images/four_1.png" class="materialboxed" width="20%">
                             <br>
                             <span class="flow-text">Podemos ingresar los elementos que nosotros queramos para aceptar o rechazar las invitaciones.</span>
                             <br>
-                            <img src="images/four_2.png" width="40%">
+                            <img src="images/four_2.png" class="materialboxed" width="20%">
                         </div>
                         </li>
                     </ul>
