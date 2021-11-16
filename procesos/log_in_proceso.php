@@ -40,7 +40,7 @@ if(!empty($_GET['nameLogIn']) && !empty($_GET['passwordLogIn'])){
                         header('Location:../index.php');
                     }
                 } else {
-                    echo "0 results";
+                    header('Location:../sign_up.php');
                 }
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);

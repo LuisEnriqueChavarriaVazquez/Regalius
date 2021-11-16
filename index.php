@@ -40,10 +40,10 @@
                     <br>
             </div>
         </li>
-        <li><a href="#!"><i class="material-icons">people</i>Gestionar amigos.</a></li>
-        <li><a href="#!"><i class="material-icons">card_giftcard</i>Gestionar intercambios.</a></li>
-        <li><a href="#!"><i class="material-icons">card_membership</i>Intercambios en curso.</a></li>
-        <li><a href="#!"><i class="material-icons">record_voice_over</i>Invitaciones recibidas.</a></li>  
+        <li><a href="gestionar_amigos_principal.php"><i class="material-icons">people</i>Gestionar amigos.</a></li>
+        <li><a href="gestionar_intercambios_principal.php"><i class="material-icons">card_giftcard</i>Gestionar intercambios.</a></li>
+        <li><a href="gestionar_intercambios_en_curso_principal.php"><i class="material-icons">card_membership</i>Intercambios en curso.</a></li>
+        <li><a href="gestionar_invitaciones_recibidas_principal.php"><i class="material-icons">record_voice_over</i>Invitaciones recibidas.</a></li>  
         <li><a href="settings.php"><i class="material-icons">settings</i>Configuraciones.</a></li>
         <li><a href="procesos/cerrarSesion.php"><i class="material-icons">directions_run</i>Cerrar sesión.</a></li>
     </ul>

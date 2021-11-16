@@ -31,20 +31,31 @@
 
                     <br>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="regalo" type="text" class="validate">
-                        <label for="regalo">Regalo</label>
-                    </div>
+                    <?php 
+                        $idIntercambio = $_GET['idIntercambio'];
+                        $idUsuario = $_GET['idUsuario'];
+                    ?>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Contraseña</label>
-                    </div>
+                    <form action="procesos/aceptar_proceso.php" method="get">
+                        <div class="input-field col s12 m12 l6">
+                            <input id="regalo" name="regalo" type="text" class="validate">
+                            <label for="regalo">Regalo</label>
+                        </div>
 
-                    <div class="input-field col s12 m12 l6">
-                        <input id="clave" type="text" class="validate">
-                        <label for="clave">Clave del intercambio</label>
-                    </div>
+                        <div class="input-field col s6 m6 l6">
+                            <input id="idIntercambio" name="idIntercambio" type="text" value="<?php echo $idIntercambio; ?>">
+                            <label for="idIntercambio">Id intercambio</label>
+                        </div>
+
+                        <div class="input-field col s6 m6 l6">
+                            <input id="idUsuario" name="idUsuario" type="text" value="<?php echo $idUsuario; ?>">
+                            <label for="idUsuario">Regalo</label>
+                        </div>
+
+                        <div class="col s12 m12 l12 center">
+                            <button type="submit" class="waves-effect waves-light btn-large red_ours_color"><i class="material-icons left">done</i>Aceptar</button>
+                        </div>
+                    </form>
 
                     <br>
                     <img src="images/confirmar.png" width="250px">
@@ -53,14 +64,6 @@
             </div>
         </div>
     </div>
-
-
-    <section class="containerGeneralWelcome cream_ours_color_dark row">
-            <div class="col s12 m12 l12 center">
-                <a href="gestionar_invitaciones_recibidas_principal.php" class="waves-effect waves-light btn-large red_ours_color"><i class="material-icons left">done</i>Aceptar</a>
-            </div>
-    </section>
-
 
 </body>
 <?php include('1_js.php'); ?>

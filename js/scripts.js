@@ -4,7 +4,6 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.collapsible').collapsible();
     $('.materialboxed').materialbox();
-    instance.open();
 
     $('.chips-placeholder').chips({
         placeholder: 'Temática',

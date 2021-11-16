@@ -20,114 +20,18 @@
         </div>
     </nav>
 
-    <!--Elementos acomodados para la gran pantalla-->
-
-    <section class="hide-on-small-only padreInfos">
-        <div class="infoHugeCard">
-            <div class="cardInfoElement">
-                <h4>Temas</h4>
-                <p>dsdnsdknds</p>
-            </div>
-            <div class="cardInfoElement">
-                <h4>Fechas</h4>
-                <p>Registro máximo: </p>
-                <br>
-                <p>Fecha del intercambio: </p>
-            </div>
-            <div class="cardInfoElement">
-                <h4>Monto</h4>
-                <p><b>XXXX</b> $</p>
-            </div>
-            <div class="cardInfoElement">
-                <h4>Comentarios</h4>
-                <p class="comentario">Lorem ipsum dolor sinisi explicabo debitis quia laudantium, deserunt molestiae est nostrum. Hic voluptatum voluptas rerum consectetur laudantium? Itaque, ducimus praesentium?</p>
-            </div>
-        </div>
-        <div class="infoHugeCard">
-            <div class="cardInfoElement">
-                <h4>Participantes</h4>
-                <ul>
-                <li>Juan</li>
-                    <li>Pedro</li>
-                    <li>Maria</li>
-                    <li>Toño</li>
-                    <li>Martín</li>
-                    <li>Juan</li>
-                    <li>Pedro</li>
-                    <li>Maria</li>
-                    <li>Toño</li>
-                    <li>Martín</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!--Carousel-->
-    <section class="container_cards hide-on-med-and-up">
-    <div class="title_all">
-        <p class="black-text">**Clave del intercambio.</p>
-    </div>
-    <br><br><br><br><br><br><br><br>
-        <div class="container_cards_secondary">
-            <div class="owl-carousel owl-theme" id="owl-carousel-datos">
-                <!--Card dos-->
-                <div class="item">
-                    <div class="cardInfo z-depth-2">
-                        <div class="cardInfoElement">
-                            <h4>Temas</h4>
-                            <p>dsdnsdknds</p>
-                        </div>
-                        <div class="cardInfoElement">
-                            <h4>Fechas</h4>
-                            <p>Registro máximo: </p>
-                            <br>
-                            <p>Fecha del intercambio: </p>
-                        </div>
-                        <div class="cardInfoElement">
-                            <h4>Monto</h4>
-                            <p><b>XXXX</b> $</p>
-                        </div>
-                        <div class="cardInfoElement">
-                            <h4>Comentarios</h4>
-                            <p class="comentario">Lorem ipsum dolor sinisi explicabo debitis quia laudantium, deserunt molestiae est nostrum. Hic voluptatum voluptas rerum consectetur laudantium? Itaque, ducimus praesentium?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Card dos-->
-                <div class="item">
-                    <div class="cardInfo z-depth-2">
-                            <div class="cardInfoElement">
-                                <h4>Participantes</h4>
-                                <ul>
-                                <li>Juan </li>
-                                    <li>Pedro </li>
-                                    <li>Maria </li>
-                                    <li>Toño </li>
-                                    <li>Martín </li>
-                                    <li>Juan </li>
-                                    <li>Pedro </li>
-                                    <li>Maria </li>
-                                    <li>Toño </li>
-                                    <li>Martín </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php require_once('procesos/d_mostrar_datos_intercambio.php'); ?>
 
     <div class="hide-on-med-and-up">
         <br><br><br><br><br><br><br><br>
     </div>
+    <br>
     <section class="buttonsContainer">
         <div>
-            <a href="d_confirmar.php" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">done</i>Aceptar</a>
+            <a href="d_confirmar.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">done</i>Aceptar</a>
         </div>
         <div>
-            <a class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">close</i>Rechazar</a>
+            <a href="procesos/rechazar_proceso.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">close</i>Rechazar</a>
         </div>
     </section>
     <div class="hide-on-med-and-up">
