@@ -20,14 +20,18 @@ if (mysqli_query($conn, $sql)) {
             
             if($idIntercambio == $idIntercambioDos && $vistoSolicitudDos == "Rechazado"){
                 $contadorRechazo++;
-            }  
+            } 
+        
         }
         echo "
                 <div class='cardInfoElement'>
-                    <h4>Aceptados</h4>
+                    <h4>Estadísticas</h4>
                     <ul>
-                        <li class'flow-text'>"; echo $contador; echo" aceptaron.</li>
-                        <li class'flow-text'>"; echo $contadorRechazo; echo" rechazaron.</li>
+                        <li class'flow-text'>"; echo $contador; echo" aceptado.</li>
+                        <li class'flow-text'>"; echo $contadorRechazo; echo" rechazado.</li>
+                        <li class'flow-text'>"; echo $contadorRechazo + $contador; echo" vistos.</li>
+                        <li class'flow-text'>"; echo $_GET['total']; echo" amigos invitados.</li>
+                        <li class'flow-text'>"; echo $_GET['total'] - ($contadorRechazo + $contador); echo" sin registrarse.</li>
                     </ul>
                 </div>
         ";

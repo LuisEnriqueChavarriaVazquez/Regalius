@@ -22,12 +22,13 @@ if (mysqli_query($conn, $sql)) {
             $limRegistro = $row["limRegistro"];
             $comentarios = $row["comentarios"];
             $amigosSeleccionados = $row["amigosSeleccionados"];
+            $total = substr_count($amigosSeleccionados, '/');
 
             //Debemos extraer nuestro nombre de la lista de amigos
             if (str_contains($amigosSeleccionados, $usuarioCreador)) { 
                 echo "
                 <div class='col s12 m12 l6 cardPadreContainer'>
-                    <a href='d_datos_recibidas.php?idIntercambio=$idIntercambio&idUsuario=$idUsuario&tema=$tema&tema1=$tema1&tema2=$tema2&tema3=$tema3&montoMax=$montoMax&limRegistro=$limRegistro&limIntercambio=$limIntercambio&comentarios=$comentarios&amigosSeleccionados=$amigosSeleccionados' class='linkBlack'>
+                    <a href='d_datos_recibidas.php?total=$total&idIntercambio=$idIntercambio&idUsuario=$idUsuario&tema=$tema&tema1=$tema1&tema2=$tema2&tema3=$tema3&montoMax=$montoMax&limRegistro=$limRegistro&limIntercambio=$limIntercambio&comentarios=$comentarios&amigosSeleccionados=$amigosSeleccionados' class='linkBlack'>
                         <div class='cardContador cultured_ours_color z-depth-2 waves-effect'>
                             <div class='cardContadorTitle flow-text'>
                                 ";

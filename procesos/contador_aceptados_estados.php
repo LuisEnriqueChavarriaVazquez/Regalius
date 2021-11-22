@@ -20,7 +20,7 @@ if (mysqli_query($conn, $sql)) {
             $vistoSolicitudDos = $row["vistoSolicitud"];
             //echo $idIntercambio;
             echo "
-                            <li class'flow-text'>"; echo $nombreAmigo; echo " // " . $vistoSolicitudDos; echo"</li>
+                <li class'flow-text'>"; echo $nombreAmigo; echo " // " . $vistoSolicitudDos; echo"</li>
             "; 
         }
     } else {

@@ -29,7 +29,7 @@
     </div>
     <section class="buttonsContainer">
         <div>
-            <a href="b_a_sortear.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>&temaTitulo=<?php echo $temaTitulo?>&tema1=<?php echo $tema1?>&tema2=<?php echo $tema2?>&tema3=<?php echo $tema3?>&montoMax=<?php echo $montoMax?>&limRegistro=<?php echo $limRegistro?>&limIntercambio=<?php echo $limIntercambio?>&comentario=<?php echo $comentario?>&amigosSeleccionados=<?php echo $amigosSeleccionados?>" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">done</i>Sortear</a>
+            <a href="b_a_sortear.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>&temaTitulo=<?php echo $temaTitulo?>&tema1=<?php echo $tema1?>&tema2=<?php echo $tema2?>&tema3=<?php echo $tema3?>&montoMax=<?php echo $montoMax?>&limRegistro=<?php echo $limRegistro?>&limIntercambio=<?php echo $limIntercambio?>&comentario=<?php echo $comentario?>&amigosSeleccionados=<?php echo $amigosSeleccionados?>" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">today</i>Adelantar sorteo</a>
         </div>
     </section>
     <div class="">

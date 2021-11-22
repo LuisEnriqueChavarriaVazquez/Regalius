@@ -25,9 +25,9 @@
     </div>
     
     <!---Inicio de la table-->
-    <div class="container" style="width: 100%; margin: 0 0 40px 0; background-color: #fff; display: flex; justify-content: left; flex-direction: column; padding: 0 30px 20px 30px;">
+    <div class="container cream_ours_color" style="width: 100%; margin: 0 0 40px 0; display: flex; justify-content: left; flex-direction: column; padding: 0 30px 20px 30px;">
         <h4>Asignados</h4>
-        <table class="striped">
+        <table class="">
             <thead>
             <tr>
                 <th>Parejas</th>
@@ -76,7 +76,13 @@
                         $contador++;
                     }
                 };
-            }; 
+            }else{
+                echo "
+                <tr>
+                    <td>No hay nadie registrado aún.</td>
+                </tr>
+                "; 
+            }
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }

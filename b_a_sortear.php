@@ -21,12 +21,12 @@
     </nav>
 
     <div class="container" style="width: 100%; margin: 40px 0 20px 0; display: flex; justify-content: center;">
-        <img src="images/ruleta.gif" width="50%" class="center-align">
+        <img src="images/ruleta.gif" width="30%" class="center-align">
     </div>
 
-    <div class="container" style="width: 100%; margin: 0 0 40px 0; background-color: #fff; display: flex; justify-content: left; flex-direction: column; padding: 0 30px 20px 30px;">
+    <div class="container cream_ours_color" style="width: 100%; margin: 0 0 40px 0; display: flex; justify-content: left; flex-direction: column; padding: 0 30px 20px 30px;">
         <h4>Resultados</h4>
-        <table class="striped">
+        <table class="">
             <thead>
             <tr>
                 <th>Amigos por parejas</th>
@@ -124,17 +124,14 @@
 
     <?php
         $sql = "UPDATE `amigointercambio` SET `sorteoResultado`='$amigosAsignados' WHERE `idIntercambio`='$idIntercambio' AND `vistoSolicitud` = 'Aceptado'";
-        if (mysqli_query($conn, $sql)) {
-
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
+        require_once('procesos/enviaremail.php');
+        
         mysqli_close($conn);
     ?>
 
     <section class="buttonsContainer">
         <div>
-            <a href="index.php" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">done</i>Finalizar</a>
+            <a href="index.php" class="waves-effect waves-light btn-large cooper_ours_color_dark"><i class="material-icons left">done</i>Adelantar sorteo.</a>
         </div>
     </section>
     <div class="">

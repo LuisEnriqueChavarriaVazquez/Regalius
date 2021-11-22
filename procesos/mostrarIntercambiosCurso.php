@@ -13,9 +13,10 @@ if (mysqli_query($conn, $sql)) {
             $tema = $row["tema"];
             $idIntercambio = $row["idIntercambio"];
             $amigosSeleccionados = $row["amigosSeleccionados"];
+            $total = substr_count($amigosSeleccionados, '/');
             echo "
             <div class='col s12 m12 l6 cardPadreContainer'>
-                <a href='b_a_datos_intercambio.php?tema=$tema&idIntercambioBase=$idIntercambio' class='linkBlack'>
+                <a href='b_a_datos_intercambio.php?tema=$tema&idIntercambioBase=$idIntercambio&total=$total' class='linkBlack'>
                     <div class='cardContador cultured_ours_color z-depth-2 waves-effect'>
                         <div class='cardContadorTitle flow-text'>
                             ";

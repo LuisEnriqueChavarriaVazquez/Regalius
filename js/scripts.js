@@ -5,11 +5,6 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.materialboxed').materialbox();
 
-    $('.chips-placeholder').chips({
-        placeholder: 'Temática',
-        secondaryPlaceholder: ' + temática',
-    });
-
     $('#owl-carousel').owlCarousel({
         loop:false,
         margin:10,
