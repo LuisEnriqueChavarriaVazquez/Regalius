@@ -45,7 +45,28 @@
         <li><a href="gestionar_intercambios_en_curso_principal.php"><i class="material-icons">card_membership</i>Intercambios en curso.</a></li>
         <li><a href="gestionar_invitaciones_recibidas_principal.php"><i class="material-icons">record_voice_over</i>Invitaciones recibidas.</a></li>  
         <li><a href="settings.php"><i class="material-icons">settings</i>Configuraciones.</a></li>
+        <li><a href="help.php"><i class="material-icons">help</i>Ayuda.</a></li>
+        <li><a href="intro.php"><i class="material-icons">child_care</i>Tutorial.</a></li>
         <li><a href="procesos/cerrarSesion.php"><i class="material-icons">directions_run</i>Cerrar sesión.</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">Temas<i class="material-icons">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                <ul>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_styles">Normal</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_deuteranopia">Deureranopia</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_protanopia">Protanopia</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_tritanopia">Tritanopia</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_oscuro">Oscuro naranja</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_oscuro_verde">Oscuro verde</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_oscuro_azul">Oscuro azul</a></li>
+                    <li><a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" id="a_oscuro_rosa">Oscuro rosa</a></li>
+                </ul>
+                </div>
+            </li>
+            </ul>
+        </li>
     </ul>
 
     <!--Carousel code-->

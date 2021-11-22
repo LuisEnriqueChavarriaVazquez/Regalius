@@ -38,13 +38,22 @@
                         <div class="collapsible-body white">
                             <span>
                             
-                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_styles"><i class="material-icons">palette</i>Normal</a>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_styles">Normal</a>
                             <br>
-                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_deuteranopia"><i class="material-icons">palette</i>Deuteranopia</a>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_deuteranopia">Deuteranopia</a>
                             <br>
-                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_protanopia"><i class="material-icons">palette</i>Protanopia</a>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_protanopia">Protanopia</a>
                             <br>
-                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_tritanopia"><i class="material-icons">palette</i>Tritanopia</a>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_tritanopia">Tritanopia</a>
+                            <br>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_oscuro">Oscuro naranja</a>
+                            <br>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_oscuro_verde">Oscuro verde</a>
+                            <br>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_oscuro_azul">Oscuro azul</a>
+                            <br>
+                            <a onclick="M.toast({html: 'Tema aplicado.'})" href="#!" class="waves-effect btn red_ours_color" style="width: 100%; padding-bottom: 10px; margin-bottom: 10px;" id="a_oscuro_rosa">Oscuro rosa</a>
+
 
                             </span>
                         </div>
