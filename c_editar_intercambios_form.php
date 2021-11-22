@@ -53,7 +53,6 @@
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-        mysqli_close($conn);
     ?>
 
     <div class="row">
@@ -83,7 +82,46 @@
                             <label for="tematicaTres">Temática tres</label>
                         </div>
 
-                        <br>
+                        <!--Buscar a los amigos-->
+                        <?php 
+                            $contador = 0;
+                            $amigosTotal = "";
+
+                            $sql = "SELECT `nombreAmigo` FROM `amigos` WHERE `idUsuario` = (SELECT `idUsuario` FROM `usuarios` WHERE `nombreUsuario` = '$usuarioCreador')";
+
+                            echo "
+
+                            <div class='input-field col s12'>
+                            <p class='black-text'>Elige a tus amigos</p>
+                            <select multiple name='amigosSelect[]'>
+                                <option style='color:#000 !important;' value='' disabled selected></option>
+                            
+                            ";
+
+                            $result = $conn->query($sql);
+                            if (mysqli_query($conn, $sql)) {
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $nombreAmigo = $row["nombreAmigo"];
+                                        echo "
+                                            <option style='color:#000 !important;' value='$nombreAmigo'>$nombreAmigo</option>
+                                        ";
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                            } else {
+                                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                            }
+                            mysqli_close($conn);
+
+                            echo "
+                            </select>
+                            </div>
+                        
+                            ";
+                        ?>
 
                         <div class="input-field col s12 m12 l6">
                             <input id="montoMax" name="montoMax" type="number" class="validate" value="<?php echo $montoMax?>">
@@ -98,6 +136,11 @@
                         <div class="input-field col s12 m12 l6">
                             <input id="intercambioFecha" name="intercambioFecha" type="text" class="validate datepicker" value="<?php echo $limIntercambio?>">
                             <label for="intercambioFecha">Fecha de intercambio</label>
+                        </div>
+
+                        <div class="input-field col s12 m12 l6">
+                            <input id="comentarios" type="text" name="comentarios" value="<?php echo $comentarios?>" data-length="120"></input>
+                            <label for="comentarios">Comentarios adicionales.</label>
                         </div>
 
                         <div class="col s12 m12 l12 center">
