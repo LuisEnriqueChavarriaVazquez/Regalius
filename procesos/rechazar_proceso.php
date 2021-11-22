@@ -5,9 +5,11 @@
     
     $idIntercambio = $_GET['idIntercambio'];
     $idUsuario = $_GET['idUsuario'];
+
+    $claveAleatoria = rand(100000, 999999);
     
     require('config.php');
-    $sql = "INSERT INTO amigointercambio (idamigoIntercambio, idIntercambio, idAmigo, nombreAmigo, regalo, vistoSolicitud, sorteoResultado) 
+    $sql = "INSERT INTO amigointercambio (idamigoIntercambio, idIntercambio, idAmigo, nombreAmigo, regalo, vistoSolicitud, sorteoResultado, claveAleatoria) 
     VALUES (
         DEFAULT,
         '".$idIntercambio."',
@@ -15,7 +17,8 @@
         '".$usuarioCreador."',
         'No hay regalo',
         'Rechazado',
-        'Sin sorteo')";
+        'Sin_sorteo',
+        '".$claveAleatoria."')";
     if (mysqli_query($conn, $sql)) {
         
     } else {

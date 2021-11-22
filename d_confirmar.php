@@ -49,13 +49,18 @@
 
                         <div class="input-field col s6 m6 l6">
                             <input id="idUsuario" name="idUsuario" type="text" value="<?php echo $idUsuario; ?>">
-                            <label for="idUsuario">Regalo</label>
+                            <label for="idUsuario">Usuario</label>
                         </div>
 
+                        <div class="input-field col s12 m12 l12">
+                                <input id="idUsuario" disabled type="text" value="Se generará una clave aleatoria">
+                                <label>Clave de invitación</label>
+                        </div>
                         <div class="col s12 m12 l12 center">
                             <button type="submit" class="waves-effect waves-light btn-large red_ours_color"><i class="material-icons left">done</i>Aceptar</button>
                         </div>
                     </form>
+
 
                     <br>
                     <img src="images/confirmar.png" width="250px">

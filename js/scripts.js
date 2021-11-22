@@ -5,6 +5,8 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.materialboxed').materialbox();
 
+    $('.modal').modal();
+
     $('#owl-carousel').owlCarousel({
         loop:false,
         margin:10,

@@ -20,11 +20,11 @@
         </div>
     </nav>
 
-    <div class="container" style="width: 100%; margin: 40px 0 20px 0; display: flex; justify-content: center;">
-        <img src="images/ruleta.gif" width="30%" class="center-align">
+    <div style="width: 100%; margin: 20px 0 20px 0; display: flex; justify-content: center;">
+        <img src="images/ruleta.gif" width="20%" class="center-align">
     </div>
 
-    <div class="container cream_ours_color" style="width: 100%; margin: 0 0 40px 0; display: flex; justify-content: left; flex-direction: column; padding: 0 30px 20px 30px;">
+    <div class="cream_ours_color" style="width: 100%; margin: 0 0 40px 0; display: flex; justify-content: left; flex-direction: column; padding: 0 30px 20px 30px;">
         <h4>Resultados</h4>
         <table class="">
             <thead>
@@ -38,12 +38,14 @@
                 require('procesos/config.php');
                 $idIntercambio = $_GET['idIntercambio'];
                 $nombreAmigo = "";
-                $sql = "SELECT `nombreAmigo` FROM `amigointercambio` WHERE `idIntercambio` = '$idIntercambio' AND `vistoSolicitud` = 'Aceptado'";
+                $claveAleatoria = "";
+                $sql = "SELECT `nombreAmigo`,`claveAleatoria` FROM `amigointercambio` WHERE `idIntercambio` = '$idIntercambio' AND `vistoSolicitud` = 'Aceptado'";
                 $result = $conn->query($sql);
                 if (mysqli_query($conn, $sql)) {
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             $nombreAmigo .= $row["nombreAmigo"] . "<br>";
+                            $claveAleatoria = $row["claveAleatoria"];
                         }
                     }else {
                         echo "Sin Participantes";
@@ -124,7 +126,11 @@
 
     <?php
         $sql = "UPDATE `amigointercambio` SET `sorteoResultado`='$amigosAsignados' WHERE `idIntercambio`='$idIntercambio' AND `vistoSolicitud` = 'Aceptado'";
-        require_once('procesos/enviaremail.php');
+        if (mysqli_query($conn, $sql)) {
+            require_once('procesos/enviaremail.php');
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
         
         mysqli_close($conn);
     ?>

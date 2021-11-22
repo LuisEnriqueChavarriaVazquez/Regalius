@@ -112,7 +112,7 @@ if (mysqli_query($conn, $sql)) {
                     </div>
                 </div>
             </section>
-            <br><br><br>
+            <br><br><br><br><br><br>
             ";
 
         }
