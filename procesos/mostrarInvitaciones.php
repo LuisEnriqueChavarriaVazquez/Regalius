@@ -6,6 +6,7 @@ $usuarioCreador = $_SESSION['name'];
 //$sql = "INSERT INTO usuarios (idUsuario, nombreUsuario, aliasUsuario, correoUsuario, passwordUsuario) VALUES (DEFAULT,'".$nombreUsuario."','".$aliasUsuario."','".$correoUsuario."','".$passwordUsuario."')";
 $sql = "SELECT `idIntercambio`,`idUsuario`,`tema`,`tema1`,`tema2`,`tema3`,`montoMax`,`limRegistro`,`limIntercambio`,`amigosSeleccionados`,`comentarios` FROM `intercambios`";
 $result = $conn->query($sql);
+$contadorVacio = 0;
 if (mysqli_query($conn, $sql)) {
     if ($result->num_rows > 0) {
         // output data of each row
@@ -43,21 +44,25 @@ if (mysqli_query($conn, $sql)) {
                 </div>
                 
                 ";
+                $contadorVacio++;
+            }else{
+                if($contadorVacio == 0){
+                    echo "
+                    <div class='row' width='100%'>
+                        <div class='col s12' 
+                        style='display: flex; 
+                        justify-content: center; 
+                        align-items: center; 
+                        flex-direction: column;'>
+                            <h4>No hay resultados</h4>
+                            <img src='images/noRes.png' width='30%'>
+                        </div>
+                    </div>
+                    ";
+                    $contadorVacio++;
+                }
             }
         }
-    } else {
-        echo "
-        <div class='row' width='100%'>
-            <div class='col s12' 
-            style='display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            flex-direction: column;'>
-                <h4>No hay resultados</h4>
-                <img src='images/noRes.png' width='30%'>
-            </div>
-        </div>
-        ";
     }
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

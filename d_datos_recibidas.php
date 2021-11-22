@@ -37,6 +37,12 @@
         <br><br><br>
     </div>
 
+    <div class="fixed-action-btn">
+        <a href="d_sorteos_resultados.php?idIntercambio=<?php echo $idIntercambio?>&idUsuario=<?php echo $idUsuario?>&temaTitulo=<?php echo $temaTitulo?>&tema1=<?php echo $tema1?>&tema2=<?php echo $tema2?>&tema3=<?php echo $tema3?>&montoMax=<?php echo $montoMax?>&limRegistro=<?php echo $limRegistro?>&limIntercambio=<?php echo $limIntercambio?>&comentario=<?php echo $comentario?>&amigosSeleccionados=<?php echo $amigosSeleccionados?>" class="btn-floating btn-large cooper_ours_color_dark">
+            <i class="large material-icons">casino</i>
+        </a>
+    </div>
+
 
 </body>
 <?php include '1_js.php'; ?>

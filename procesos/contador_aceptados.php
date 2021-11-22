@@ -4,6 +4,7 @@
 $sql = "SELECT `idIntercambio`,`idAmigo`,`vistoSolicitud` FROM `amigointercambio`";
 $result = $conn->query($sql);
 $contador = 0;
+$contadorRechazo = 0;
 if (mysqli_query($conn, $sql)) {
     if ($result->num_rows > 0) {
         // output data of each row
@@ -15,13 +16,18 @@ if (mysqli_query($conn, $sql)) {
 
             if($idIntercambio == $idIntercambioDos && $vistoSolicitudDos == "Aceptado"){
                 $contador++;
-            }   
+            }
+            
+            if($idIntercambio == $idIntercambioDos && $vistoSolicitudDos == "Rechazado"){
+                $contadorRechazo++;
+            }  
         }
         echo "
                 <div class='cardInfoElement'>
                     <h4>Aceptados</h4>
                     <ul>
                         <li class'flow-text'>"; echo $contador; echo" aceptaron.</li>
+                        <li class'flow-text'>"; echo $contadorRechazo; echo" rechazaron.</li>
                     </ul>
                 </div>
         ";

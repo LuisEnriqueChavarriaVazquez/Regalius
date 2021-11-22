@@ -49,7 +49,7 @@ if (mysqli_query($conn, $sql)) {
                         <h4>Comentarios</h4>
                         <p class='comentario'>"; echo $comentario; echo "</p>
                     </div>";
-                    require('contador_aceptados.php');
+                    
             echo "</div>
                 <div class='infoHugeCard'>
                     <div class='cardInfoElement'>
@@ -57,17 +57,17 @@ if (mysqli_query($conn, $sql)) {
                         <ul>
                             <li class'flow-text'>"; echo $amigosSeleccionados; echo"<br>&nbsp;</li>
                         </ul>
-                    </div>
-                </div>
+                    </div>";
+            require('contador_aceptados.php');
+            echo "</div>
             </section>
-            
             ";
 
             echo "
             <section class='container_cards hide-on-med-and-up'>
             <div class='title_all'>
                 <p class='black-text'>"; echo $temaTitulo; echo "</p>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br>
             </div>
                 <div class='container_cards_secondary'>
                     <div class='owl-carousel owl-theme' id='owl-carousel-datos'>
@@ -93,7 +93,6 @@ if (mysqli_query($conn, $sql)) {
                                     <h4>Comentarios</h4>
                                     <p class='comentario'>"; echo $comentario; echo "</p>
                                 </div>";
-                                require('contador_aceptados.php');
             echo"                </div>
                         </div>
 
@@ -105,14 +104,15 @@ if (mysqli_query($conn, $sql)) {
                                         <ul>
                                         <li>"; echo $amigosSeleccionados; echo "<br>&nbsp;</li>
                                         </ul>
-                                    </div>
-                                </div>
+                                    </div>";
+            require('contador_aceptados.php');                        
+            echo                "</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <br><br><br><br><br><br>
+            <br><br><br>
             ";
 
         }

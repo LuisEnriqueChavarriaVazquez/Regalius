@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require('config.php');
 session_start();
 $usuarioCreador = $_SESSION['name']; 
 $tema = $_GET['tema'];
@@ -48,16 +48,13 @@ if (mysqli_query($conn, $sql)) {
                     <div class='cardInfoElement'>
                         <h4>Comentarios</h4>
                         <p class='comentario'>"; echo $comentario; echo "</p>
-                    </div>";
-            require('contador_aceptados.php');        
+                    </div>";      
             echo "</div>
                 <div class='infoHugeCard'>
-                    <div class='cardInfoElement'>
-                        <h4>Participantes</h4>
-                        <ul>
-                            <li class'flow-text'>"; echo $amigosSeleccionados; echo"<br>&nbsp;</li>
-                        </ul>
-                    </div>
+                    ";
+            require('contador_aceptados.php');  
+            require('contador_aceptados_estados.php');
+            echo    "
                 </div>
             </section>
             
@@ -67,7 +64,7 @@ if (mysqli_query($conn, $sql)) {
             <section class='container_cards hide-on-med-and-up'>
             <div class='title_all'>
                 <p class='black-text'>"; echo $temaTitulo; echo "</p>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br>
             </div>
                 <div class='container_cards_secondary'>
                     <div class='owl-carousel owl-theme' id='owl-carousel-datos'>
@@ -93,20 +90,15 @@ if (mysqli_query($conn, $sql)) {
                                     <h4>Comentarios</h4>
                                     <p class='comentario'>"; echo $comentario; echo "</p>
                                 </div>";
-                                require('contador_aceptados.php');
             echo "           </div>
                         </div>
 
                         <!--Card dos-->
                         <div class='item'>
-                            <div class='cardInfo z-depth-2'>
-                                    <div class='cardInfoElement'>
-                                        <h4>Participantes</h4>
-                                        <ul>
-                                        <li>"; echo $amigosSeleccionados; echo "<br>&nbsp;</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class='cardInfo z-depth-2'>";
+            require('contador_aceptados.php');  
+            require('contador_aceptados_estados.php');              
+            echo               "</div>
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,7 @@
 
     <section class="containerGeneral cream_ours_color_dark">
         <div class="containerCardsContador row">
-            <?php require_once('procesos/mostrarIntercambiosCurso.php'); ?>
+            <?php require('procesos/mostrarIntercambiosCurso.php'); ?>
         </div>
     </section>
 
