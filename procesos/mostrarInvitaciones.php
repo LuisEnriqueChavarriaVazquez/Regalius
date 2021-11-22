@@ -47,18 +47,6 @@ if (mysqli_query($conn, $sql)) {
                 $contadorVacio++;
             }else{
                 if($contadorVacio == 0){
-                    echo "
-                    <div class='row' width='100%'>
-                        <div class='col s12' 
-                        style='display: flex; 
-                        justify-content: center; 
-                        align-items: center; 
-                        flex-direction: column;'>
-                            <h4>No hay resultados</h4>
-                            <img src='images/noRes.png' width='30%'>
-                        </div>
-                    </div>
-                    ";
                     $contadorVacio++;
                 }
             }
